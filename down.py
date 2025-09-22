@@ -1,7 +1,7 @@
 import os
 import shutil
 
-# Path to your Downloads
+# Path 
 downloads_path = os.path.expanduser("~/Downloads")
 
 # Target folders
@@ -10,7 +10,7 @@ targets = {
     ".heic": "HEIC"
 }
 
-# Loop through files in the Downloads
+
 for filename in os.listdir(downloads_path):
     full_path = os.path.join(downloads_path, filename)
 
@@ -27,5 +27,3 @@ for filename in os.listdir(downloads_path):
         shutil.move(full_path, os.path.join(target_folder, filename))
 
 print("Files sorted successfully!")
-
-# Note: This script assumes that the target folders (PDF, HEIC, Others) do not already exist.
