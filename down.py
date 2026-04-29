@@ -14,6 +14,7 @@ targets = {
     ".pptx": "Powerpoints"
 }
 
+OTHERS_EXTS = {".py", ".r", ".c", ".pptx"}
 
 for filename in os.listdir(DOWNLOAD_PATH):
     FullPathFile = os.path.join(DOWNLOAD_PATH, filename)
@@ -23,14 +24,8 @@ for filename in os.listdir(DOWNLOAD_PATH):
         ext = ext.lower()
 
         if ext in targets:
-            if ext == ".py":
+            if ext in OTHERS_EXTS:
                 target_folder = os.path.join(DOWNLOAD_PATH, "Others", targets[ext])
-            elif ext == ".r":
-                target_folder = os.path.join(DOWNLOAD_PATH, "Others", targets[ext])
-            elif ext == ".c":
-                target_folder = os.path.join(DOWNLOAD_PATH, "Others", targets[ext])
-            elif ext == ".pptx":
-                target_folder =  os.path.join(DOWNLOAD_PATH, "Others", targets[ext])
             else:
                 target_folder = os.path.join(DOWNLOAD_PATH, targets[ext])
         else:
